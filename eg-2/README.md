@@ -1,18 +1,59 @@
-## Getting Started
+# Vehicle System
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This Java program models a vehicle system using object-oriented programming principles. It includes abstract classes, inheritance, method overriding, and polymorphism to represent different types of vehicles.
 
-## Folder Structure
+## Classes
 
-The workspace contains two folders by default, where:
+### Vehicle (Abstract Class)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- **Fields**: `model` (String), `year` (int)
+- **Methods**:
+  - `Vehicle(String model, int year)` - Constructor
+  - `abstract void transMode()` - Abstract method to be implemented by subclasses
+  - `void title()` - Prints the model and year of the vehicle
+  - `String getModel()` - Returns the model of the vehicle
+  - `int getYear()` - Returns the year of the vehicle
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Aircraft (Subclass of Vehicle)
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+- **Fields**: `tMode` (String)
+- **Methods**:
+  - `Aircraft(String model, int year, String tMode)` - Constructor
+  - `void transMode()` - Prints the transportation mode (overrides abstract method)
 
-## Dependency Management
+### Ship (Subclass of Vehicle)
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- **Fields**: `tMode` (String)
+- **Methods**:
+  - `Ship(String model, int year, String tMode)` - Constructor
+  - `void transMode()` - Prints the transportation mode (overrides abstract method)
+
+### Car (Subclass of Vehicle)
+
+- **Fields**: `tMode` (String)
+- **Methods**:
+  - `Car(String model, int year, String tMode)` - Constructor
+  - `void transMode()` - Prints the transportation mode (overrides abstract method)
+
+## Usage
+
+Instantiate the `Aircraft`, `Ship`, and `Car` classes and call their methods to display information:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Vehicle aircraft = new Aircraft("Airbus-414J", 2022, "Air");
+        Vehicle ship = new Ship("MEASK-Coastliner-V", 2005, "Sea");
+        Vehicle car = new Car("Toyota Land Cruiser", 2024, "Land");
+
+        aircraft.title();
+        aircraft.transMode();
+
+        ship.title();
+        ship.transMode();
+
+        car.title();
+        car.transMode();
+    }
+}
+```
