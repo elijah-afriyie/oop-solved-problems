@@ -6,11 +6,14 @@ public class Main {
 
         aircraft.title();
         aircraft.transMode();
+        System.out.println();
 
         ship.title();
         ship.transMode();
+        System.out.println();
 
         car.title();
         car.transMode();
+        System.out.println();
     }
 }

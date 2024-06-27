@@ -10,11 +10,14 @@ public class Main {
         // Implementations of the class instances
         magazine.display();
         magazine.userPreference();
+        System.out.println();
 
         flashDrive.display();
         flashDrive.userPreference();
+        System.out.println();
 
         vhs.display();
         vhs.userPreference();
+        System.out.println();
     }
 }
