@@ -1,51 +1,68 @@
 # Vehicle System
 
-This Java program models a vehicle system using object-oriented programming principles. It includes abstract classes, inheritance, method overriding, and polymorphism to represent different types of vehicles.
+This Java program models different types of vehicles using object-oriented programming principles. It includes abstract classes, inheritance, method overriding, and polymorphism to represent different types of vehicles.
 
 ## Classes
 
 ### Vehicle (Abstract Class)
+- **Fields**:
+  - `model` (String): Represents the model of the vehicle.
+  - `year` (int): Represents the year the vehicle was made.
 
-- **Fields**: `model` (String), `year` (int)
+- **Constructor**:
+  - `Vehicle(String model, int year)`: Initializes the fields.
+
 - **Methods**:
-  - `Vehicle(String model, int year)` - Constructor
-  - `abstract void transMode()` - Abstract method to be implemented by subclasses
-  - `void title()` - Prints the model and year of the vehicle
-  - `String getModel()` - Returns the model of the vehicle
-  - `int getYear()` - Returns the year of the vehicle
+  - `abstract void transMode()`: Abstract method to be implemented by subclasses.
+  - `void title()`: Prints the vehicle's model and year.
+  - Getter methods for `model` and `year`.
 
 ### Aircraft (Subclass of Vehicle)
+- **Fields**:
+  - `tMode` (String): Represents the mode of transportation.
 
-- **Fields**: `tMode` (String)
+- **Constructor**:
+  - `Aircraft(String model, int year, String tMode)`: Initializes all fields, including those from the `Vehicle` class.
+
 - **Methods**:
-  - `Aircraft(String model, int year, String tMode)` - Constructor
-  - `void transMode()` - Prints the transportation mode (overrides abstract method)
+  - `void transMode()`: Prints the specific mode of transportation (overrides abstract method).
 
 ### Ship (Subclass of Vehicle)
+- **Fields**:
+  - `tMode` (String): Represents the mode of transportation.
 
-- **Fields**: `tMode` (String)
+- **Constructor**:
+  - `Ship(String model, int year, String tMode)`: Initializes all fields, including those from the `Vehicle` class.
+
 - **Methods**:
-  - `Ship(String model, int year, String tMode)` - Constructor
-  - `void transMode()` - Prints the transportation mode (overrides abstract method)
+  - `void transMode()`: Prints the specific mode of transportation (overrides abstract method).
 
 ### Car (Subclass of Vehicle)
+- **Fields**:
+  - `tMode` (String): Represents the mode of transportation.
 
-- **Fields**: `tMode` (String)
+- **Constructor**:
+  - `Car(String model, int year, String tMode)`: Initializes all fields, including those from the `Vehicle` class.
+
 - **Methods**:
-  - `Car(String model, int year, String tMode)` - Constructor
-  - `void transMode()` - Prints the transportation mode (overrides abstract method)
+  - `void transMode()`: Prints the specific mode of transportation (overrides abstract method).
 
-## Usage
+## Main Class
+- **Main**: Contains the `main` method where instances of `Aircraft`, `Ship`, and `Car` are created. It uses the `title()` method to print the details of each vehicle and the `transMode()` method to print the specific transportation mode of each vehicle.
+
+## Example Usage
 
 Instantiate the `Aircraft`, `Ship`, and `Car` classes and call their methods to display information:
 
 ```java
 public class Main {
     public static void main(String[] args) {
+        // Instances of the class
         Vehicle aircraft = new Aircraft("Airbus-414J", 2022, "Air");
         Vehicle ship = new Ship("MEASK-Coastliner-V", 2005, "Sea");
         Vehicle car = new Car("Toyota Land Cruiser", 2024, "Land");
 
+        // Implementations of the class instances
         aircraft.title();
         aircraft.transMode();
 
@@ -56,4 +73,19 @@ public class Main {
         car.transMode();
     }
 }
+```
+
+### Example Output
+
+The program should produce output similar to the following when run:
+
+```
+Manifest ==> Model: Airbus-414J -::- Year: 2022
+Transportation mode: Air
+
+Manifest ==> Model: MEASK-Coastliner-V -::- Year: 2005
+Transportation mode: Sea
+
+Manifest ==> Model: Toyota Land Cruiser -::- Year: 2024
+Transportation mode: Land
 ```

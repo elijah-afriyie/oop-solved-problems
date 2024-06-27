@@ -1,31 +1,40 @@
 You are tasked with creating a Java program that models different types of vehicles. The program should use object-oriented programming principles to ensure it is well-structured, flexible, and reusable.
 
-**Instructions:**
+1. **Create a Base Class for Vehicles**:
+   - Design an abstract class named `Vehicle` with the common properties that all vehicles share, such as `model` (String) and `year` (int).
+   - Implement a constructor in `Vehicle` to initialize these properties.
+   - Define an abstract method `transMode()` in `Vehicle` to represent the mode of transportation.
+   - Implement a regular method `title()` that prints the vehicle's model and year.
+   - Provide getter methods for the `model` and `year` properties.
 
-1. **Create a Base Class for Vehicles:**
+2. **Subclass Implementation**:
+   - Create three subclasses of `Vehicle`: `Aircraft`, `Ship`, and `Car`.
+   - Each subclass should have an additional property `tMode` (String) to specify the mode of transportation.
+   - Implement a constructor in each subclass to initialize all properties, including those from `Vehicle`.
+   - Override the `transMode()` method in each subclass to print the specific mode of transportation.
+   
+3. **Object Creation and Testing**:
+   - In the `Main` class, create instances of `Aircraft`, `Ship`, and `Car`.
+   - Use the `title()` method to print the details of each vehicle.
+   - Use the `transMode()` method to print the specific transportation mode of each vehicle.
 
-   - This class should include common properties that all vehicles share, such as the vehicle's model and the year it was made.
-   - Include methods that would be common to all vehicles, and consider how to represent different types of vehicles that have unique behaviors.
+### Requirements:
+- Ensure the program demonstrates the use of inheritance and method overriding.
+- Each subclass should provide its own implementation of the `transMode()` method.
+- The `title()` method should be used to print the common details of the vehicles, while the `transMode()` method should print the specific details.
 
-2. **Subclass Implementation:**
+### Example Output:
+Your program should produce output similar to the following when run:
 
-   - Think about different types of vehicles (e.g., aircraft, ships, cars) and how they might differ from each other.
-   - Each subclass should have additional properties or methods specific to that type of vehicle.
-   - Ensure each subclass can provide specific details about itself, such as its mode of transportation.
+```
+Manifest ==> Model: Airbus-414J -::- Year: 2022
+Transportation mode: Air
 
-3. **Object Creation and Testing:**
+Manifest ==> Model: MEASK-Coastliner-V -::- Year: 2005
+Transportation mode: Sea
 
-   - Create a separate class where you will instantiate objects of your vehicle subclasses.
-   - Test the behaviors and properties of each type of vehicle, ensuring they correctly display their information and unique behaviors.
+Manifest ==> Model: Toyota Land Cruiser -::- Year: 2024
+Transportation mode: Land
+```
 
-4. **Enhance Functionality:**
-   - After initial implementation, think about how you could extend or modify the base class to automatically include more specific details about each vehicle type when displaying information.
-
-**Objectives:**
-
-- Demonstrate your understanding of abstract classes and inheritance.
-- Show how to use method overriding to provide specific implementations in subclasses.
-- Utilize polymorphism to interact with different types of vehicle objects through a common interface.
-- Test and validate the implementation, ensuring all features work as expected.
-
-By completing this task, you should be able to show a thorough understanding of object-oriented programming concepts and how they can be applied to solve a practical problem.
+By following these instructions, you should be able to implement a system that adheres to the principles of object-oriented programming and demonstrates the use of abstract classes, inheritance, and polymorphism.
